@@ -37,3 +37,12 @@ resilience4j:
       accountService:
         limit-for-period: 10
         limit-refresh-period: 1s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  metrics:
+    tags:
+      application: ${spring.application.name}
