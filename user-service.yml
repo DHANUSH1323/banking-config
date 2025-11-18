@@ -26,6 +26,15 @@ app:
 server:
   port: 8082
 
+logging:
+  pattern:
+    level: "%5p [traceId=%X{trace_id} spanId=%X{span_id}]"
+
+otel:
+  resource:
+    attributes:
+      service.name: ${spring.application.name}
+
 resilience4j:
   circuitbreaker:
     instances:
